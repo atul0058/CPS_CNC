@@ -1,8 +1,6 @@
 import xlrd
 import pymysql
 
-
-
 file_location="D:/CPS of CNC/sheet1.xlsx"
 workbook=xlrd.open_workbook(file_location)
 sheet=workbook.sheet_by_index(0)
@@ -28,44 +26,18 @@ CuttingOperation=[]
 
 for i in range(1,sheet.nrows):
 	Time.append(sheet.cell_value(i,0))
-
-for i in range(1,sheet.nrows):
 	Power.append(sheet.cell_value(i,1))
-
-for i in range(1,sheet.nrows):
 	Energy.append(sheet.cell_value(i,2))
-
-for i in range(1,sheet.nrows):
 	OperatingState.append(sheet.cell_value(i,3))
-
-for i in range(1,sheet.nrows):
 	BasicModule.append(sheet.cell_value(i,4))
-
-for i in range(1,sheet.nrows):
 	Lights.append(sheet.cell_value(i,5))
-
-for i in range(1,sheet.nrows):
 	CoolantPump.append(sheet.cell_value(i,6))
-
-for i in range(1,sheet.nrows):
 	SpindleMotor.append(sheet.cell_value(i,7))
-
-for i in range(1,sheet.nrows):
 	XAxisMotor.append(sheet.cell_value(i,8))
-
-for i in range(1,sheet.nrows):
 	YAxisMotor.append(sheet.cell_value(i,9))
-
-for i in range(1,sheet.nrows):
 	ZAxisMotor.append(sheet.cell_value(i,10))
-
-for i in range(1,sheet.nrows):
 	ToolSelectMotor.append(sheet.cell_value(i,11))
-
-for i in range(1,sheet.nrows):
 	ToolChangeMotor.append(sheet.cell_value(i,12))
-
-for i in range(1,sheet.nrows):
 	CuttingOperation.append(sheet.cell_value(i,13))
 
 conn = pymysql.connect(host="localhost", user="root", passwd="raspberry", db="CNC")
